@@ -1,0 +1,14 @@
+li.selected {
+    outline: 2px solid darkgrey;
+}
+.padding {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.padding-playlist {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+}

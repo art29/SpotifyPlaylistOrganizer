@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Spotify Playlist Organizer</title>
+    <script src="{{ url_for('static', filename='js/jquery-1.12.4.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-ui.js') }}"></script>
+    <script src="https://rawgit.com/shvetsgroup/jquery.multisortable/master/src/jquery.multisortable.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+
+    <script>
+        function savePlaylist() {
+            $(function () {
+                let sortSongs = $('#sortSongs').sortable('toArray');
+                console.log(JSON.stringify(sortSongs));
+
+                $.ajax({
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(sortSongs),
+                    dataType: 'json',
+                    url: '/send',
+                });
+            })
+        }
+    </script>
+</head>
+<body>
+<script>
+    $(function () {
+        $('#sortSongs').multisortable();
+    });
+</script>
+<div class="padding">
+    <ul id="sortSongs" class="list-group">
+        {% for i in songs %}
+        <li class="list-group-item" id="songs_{{ i }}">{{ songs[i] }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <button onclick="savePlaylist()" class="btn btn-primary">Save Playlist</button>
+    <br><br>
+</div>
+</body>
+</html>
