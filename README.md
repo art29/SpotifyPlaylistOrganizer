@@ -2,12 +2,10 @@
 
 Organize your playlists by moving the songs in the order you want ! (It will create a new playlist every time to make sure you don't lose your old orders)
 
-### Easy way
+## Easy way
 * Head on to [spotify.octorgb.com](https:/spotify.octorgb.com) and start creating new playlists orders right away!
 
-### Harder Way
-
-## Installation
+## Installation (Harder Way)
 
 1. Clone the repo 
 2. Create a Spotify App from their [dev.spotify.com](https://developer.spotify.com/)
