@@ -3,7 +3,7 @@
 Organize your playlists by moving the songs in the order you want ! (It will create a new playlist every time to make sure you don't lose your old orders)
 
 ## Easy way
-* Head on to [spotify.octorgb.com](https:/spotify.octorgb.com) and start creating new playlists orders right away!
+* Head on to [spotify.octorgb.com](https://spotify.octorgb.com) and start creating new playlists orders right away!
 
 ## Installation (Harder Way)
 
